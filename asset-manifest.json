@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/portfolio-website/static/css/main.99f46bb4.css",
-    "main.js": "/portfolio-website/static/js/main.aa265daf.js",
-    "static/media/Nimo.jpg": "/portfolio-website/static/media/Nimo.bb1798c6d16a8b695ac0.jpg",
-    "static/media/computer_vision.jpeg": "/portfolio-website/static/media/computer_vision.a97802ac641d9c5ac41b.jpeg",
-    "static/media/RestaurantAI.jpg": "/portfolio-website/static/media/RestaurantAI.6c4509bdf2236a83273c.jpg",
-    "static/media/lunarlander.jpeg": "/portfolio-website/static/media/lunarlander.c8eddbb4fb8833a7240c.jpeg",
-    "index.html": "/portfolio-website/index.html",
-    "main.99f46bb4.css.map": "/portfolio-website/static/css/main.99f46bb4.css.map",
-    "main.aa265daf.js.map": "/portfolio-website/static/js/main.aa265daf.js.map"
+    "main.css": "/static/css/main.99f46bb4.css",
+    "main.js": "/static/js/main.eda7f196.js",
+    "static/media/Nimo.jpg": "/static/media/Nimo.bb1798c6d16a8b695ac0.jpg",
+    "static/media/computer_vision.jpeg": "/static/media/computer_vision.a97802ac641d9c5ac41b.jpeg",
+    "static/media/RestaurantAI.jpg": "/static/media/RestaurantAI.6c4509bdf2236a83273c.jpg",
+    "static/media/lunarlander.jpeg": "/static/media/lunarlander.c8eddbb4fb8833a7240c.jpeg",
+    "index.html": "/index.html",
+    "main.99f46bb4.css.map": "/static/css/main.99f46bb4.css.map",
+    "main.eda7f196.js.map": "/static/js/main.eda7f196.js.map"
   },
   "entrypoints": [
     "static/css/main.99f46bb4.css",
-    "static/js/main.aa265daf.js"
+    "static/js/main.eda7f196.js"
   ]
 }
