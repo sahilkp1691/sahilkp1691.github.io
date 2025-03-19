@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Body Styles */
+body {
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #0a192f;
+  color: #e6f1ff;
+  line-height: 1.6;
+}
+
+/* Code Styles */
+code {
+  font-family: 'Fira Code', 'Courier New', monospace;
+  background-color: #112240;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  color: #64ffda;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus Styles */
+*:focus {
+  outline: 2px solid #64ffda;
+  outline-offset: 3px;
+}
+
+/* Header Bar */
+.header-bar {
+  background-color: #112240;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  padding: 1rem 0;
+}
+
+/* Button Styles */
+.button-primary {
+  background-color: #3f8cff;
+  color: #ffffff;
+  border-radius: 4px;
+  padding: 0.75rem 2rem;
+  transition: background 0.3s ease-in-out;
+}
+
+.button-primary:hover {
+  background-color: #2a6cf9;
+}
+
+.button-secondary {
+  background-color: transparent;
+  border: 2px solid #64ffda;
+  color: #64ffda;
+  border-radius: 4px;
+  padding: 0.75rem 2rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.button-secondary:hover {
+  background-color: #64ffda;
+  color: #0a192f;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+}
+
+p {
+  color: #a8b2d1;
+  margin-bottom: 1rem;
+}
