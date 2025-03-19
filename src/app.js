@@ -4,7 +4,7 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { AppBar, Toolbar, Typography, Button, IconButton, Drawer, List, ListItem, ListItemText, Box, useMediaQuery } from '@mui/material';
 import { Menu as MenuIcon, Close as CloseIcon } from '@mui/icons-material';
-
+import spLogo from './assets/Images/logo.jpeg';
 // Import pages
 import HomePage from './pages/homepage';
 import ProjectsPage from './pages/projects';
@@ -79,12 +79,15 @@ const App = () => {
           <AppBar position="sticky" className="bg-gradient-to-r from-header to-background border-b border-gray-800">
             <Toolbar>
               <Typography 
-                variant="h6" 
-                component={Link} 
-                to="/" 
-                className="font-bold text-accent no-underline mr-auto"
-              >
-                Sahil Pansare
+                  component={Link} 
+                  to="/" 
+                  className="no-underline mr-auto"
+                >
+                  <img 
+                    src={spLogo} 
+                    alt="Logo" 
+                    style={{ height: '40px', width: 'auto' }} 
+                  />
               </Typography>
               {isMobile ? (
                 <IconButton
