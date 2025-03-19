@@ -2,7 +2,7 @@
 
 A sleek, modern portfolio website built with React, Tailwind CSS, and Material-UI. This project showcases my skills and projects in the field of Machine Learning and Artificial Intelligence.
 
-![Portfolio Website Screenshot](preview.png)
+![Portfolio Website Screenshot](./src/assets/Images/portfolioPreview.jpg)
 
 ## Features
 

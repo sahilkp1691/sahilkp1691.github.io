@@ -4,59 +4,61 @@ import { WorkOutline, School, Code, DownloadOutlined, CheckCircleOutline } from 
 
 const CVPage = () => {
   const skills = [
-    { category: "Programming Languages", items: ["Python", "JavaScript", "TypeScript", "SQL"] },
-    { category: "ML/AI", items: ["TensorFlow", "PyTorch", "scikit-learn", "Keras", "NLTK", "OpenCV"] },
-    { category: "Web Development", items: ["React", "Node.js", "Express", "Flask", "Django"] },
-    { category: "Tools & Platforms", items: ["Git", "Docker", "AWS", "Google Cloud", "Kubernetes"] },
+    { category: "Programming", items: ["Python", "R", "SQL"] },
+    { category: "ML/AI", items: ["TensorFlow", "PyTorch", "scikit-learn", "Keras", "LangChain"] },
+    { category: "Data Visualization", items: ["Tableau", "Microsoft Power BI", "Matplotlib", "Dash", "Plotly"] },
+    { category: "Tools & Platforms", items: ["Git", "Docker", "AWS", "OpenAI (GPT4, Whisper)", "Cursor"] },
   ];
 
   const experiences = [
     {
-      title: "Senior Machine Learning Engineer",
-      company: "AI Solutions Inc.",
-      period: "2022 - Present",
+      title: "Data Scientist",
+      company: "BG Automotive, UK",
+      period: "Mar'25 - Present",
       description: [
-        "Led the development of a computer vision system that improved product defect detection by 35%",
-        "Designed and implemented a recommendation engine that increased user engagement by 28%",
-        "Mentored junior engineers and conducted technical interviews",
-        "Collaborated with cross-functional teams to deploy ML models to production"
+        "Developing a digital clone of BGA's supply chain for enhanced forecasting and inventory management.",
+        "Building time series models for accurate demand forecasting and stock level optimization",
+        "Implementing min-max inventory calculations to maintain optimal stock levels.",
+        "Leveraging data-driven insights to improve supply chain efficiency and decision-making."
       ]
     },
     {
       title: "Data Scientist",
-      company: "Data Innovations LLC",
-      period: "2020 - 2022",
+      company: "Ernst & Young India LLP.",
+      period: "Feb'22 - May'23",
       description: [
-        "Built predictive models for customer churn analysis with 92% accuracy",
-        "Developed NLP pipelines for sentiment analysis of customer feedback",
-        "Created interactive dashboards using Plotly and Dash",
-        "Optimized ETL processes reducing data processing time by 40%"
+        "Delivered time series price forecasting solutions for the State Government Agriculture Department using LSTM and ARIMA, retaining a £600,000 client project and increasing forecasting accuracy (based on MAPE) from 72% to 96%.",
+        "Deployed Computer Vision models for MENA's largest power supplier, employing advanced machine learning techniques for Object Detection and Anomaly Detection, resulting in enhanced operational efficiency and cost savings.",
+        "Developed an NLP chatbot for utility sector customer support using LLaMA, Flask, and Docker, reducing customer query resolution time by 40%.",
+        "Built an RAG system using LLaMA, Langchain, and Chroma DB for public health research retrieval, reducing research time during crisis situations.",
+        "Designed a real-time defect detection system in manufacturing using YOLOv5, increasing QA efficiency and reducing defects.",
+        "Created interactive Dash/Plotly dashboards for real-time log data insights at the National Data Centre for India, improving incident resolution times. Integrated an ML model for anomaly detection, enabling the automatic flagging of potential cyber threats, enhancing security monitoring efficiency."
       ]
     },
     {
-      title: "Machine Learning Intern",
-      company: "Tech Startup",
-      period: "2019 - 2020",
+      title: "Data Scientist",
+      company: "Enerdatics- Energy Analytics Startup",
+      period: "Apr'21 - Dec'21",
       description: [
-        "Assisted in the development of image recognition algorithms",
-        "Performed data cleaning and preprocessing for various ML projects",
-        "Implemented data visualization tools using D3.js and Matplotlib"
+        "Built renewable energy consumption models, improving predictive accuracy by 20%, optimizing resource allocation for clients.",
+        "Designed an NLP pipeline to classify and extract key entities from industry reports, reducing data transformation time by 2x.",
+        "Conducted web scraping to compile M&A data in the renewable energy sector, producing insights that directly supported £4M worth of investments."
       ]
     }
   ];
 
   const education = [
     {
-      degree: "Master of Science in Computer Science",
-      institution: "Stanford University",
-      period: "2018 - 2020",
-      focus: "Specialization in Artificial Intelligence and Machine Learning"
+      degree: "Master of Science in Data Science",
+      institution: "University of Bath, UK",
+      period: "2023 - 2024",
+      focus: "(Thesis) RadarGrasp - Developed an end-to-end radar-based framework using FMCW radar for human grasp classification and prediction with models like Temporal CNN and CNN-LSTM."
     },
     {
-      degree: "Bachelor of Science in Computer Engineering",
-      institution: "MIT",
-      period: "2014 - 2018",
-      focus: "Minor in Mathematics"
+      degree: "Bachelor of Science in Data Science",
+      institution: "Symbiois Skills and Professional University, Pune",
+      period: "2019 - 2022",
+      focus: "Winner of Smart India Hackathon 2020 – Software Edition (World’s Largest Hackathon)"
     }
   ];
 
