@@ -1,17 +1,18 @@
 {
   "files": {
     "main.css": "/static/css/main.99f46bb4.css",
-    "main.js": "/static/js/main.1d66a473.js",
+    "main.js": "/static/js/main.4cc4ffe4.js",
     "static/media/Nimo.jpg": "/static/media/Nimo.bb1798c6d16a8b695ac0.jpg",
+    "static/media/logo.jpeg": "/static/media/logo.87940333e4bcfb1a9fae.jpeg",
     "static/media/computer_vision.jpeg": "/static/media/computer_vision.a97802ac641d9c5ac41b.jpeg",
     "static/media/RestaurantAI.jpg": "/static/media/RestaurantAI.6c4509bdf2236a83273c.jpg",
     "static/media/lunarlander.jpeg": "/static/media/lunarlander.c8eddbb4fb8833a7240c.jpeg",
     "index.html": "/index.html",
     "main.99f46bb4.css.map": "/static/css/main.99f46bb4.css.map",
-    "main.1d66a473.js.map": "/static/js/main.1d66a473.js.map"
+    "main.4cc4ffe4.js.map": "/static/js/main.4cc4ffe4.js.map"
   },
   "entrypoints": [
     "static/css/main.99f46bb4.css",
-    "static/js/main.1d66a473.js"
+    "static/js/main.4cc4ffe4.js"
   ]
 }
