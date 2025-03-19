@@ -29,7 +29,7 @@ const ProjectsPage = () => {
     {
       id: 3,
       title: "Computer Vision Object Detection",
-      description: "A mobile-friendly object detection system using a custom-trained YOLOv5 model.",
+      description: "An object detection system using a custom-trained YOLOv5 model.",
       image: computerVision,
       tags: ["Computer Vision", "PyTorch", "YOLO", "Streamlit"],
       github: "https://github.com/sahilkp1691/Application-Object-Detection",
