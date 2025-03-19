@@ -6,7 +6,6 @@ A sleek, modern portfolio website built with React, Tailwind CSS, and Material-U
 
 ## Features
 
-- Interactive AI/ML-themed background using Three.js
 - Responsive design works on all devices
 - Dark mode with a clean, modern UI
 - Sections for Projects, CV/Resume, and Contact
@@ -23,7 +22,6 @@ You can visit the live demo [here](https://sahilkp1691.github.io/portfolio).
 - React.js
 - Tailwind CSS
 - Material-UI
-- Three.js (for interactive background)
 - React Router (for navigation)
 
 ### Backend
