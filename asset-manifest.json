@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/personal-portfolio/static/css/main.e0016c7a.css",
-    "main.js": "/personal-portfolio/static/js/main.d2297e0a.js",
-    "static/media/Nimo.jpg": "/personal-portfolio/static/media/Nimo.bb1798c6d16a8b695ac0.jpg",
-    "static/media/computer_vision.jpeg": "/personal-portfolio/static/media/computer_vision.a97802ac641d9c5ac41b.jpeg",
-    "static/media/RestaurantAI.jpg": "/personal-portfolio/static/media/RestaurantAI.6c4509bdf2236a83273c.jpg",
-    "static/media/lunarlander.jpeg": "/personal-portfolio/static/media/lunarlander.c8eddbb4fb8833a7240c.jpeg",
-    "index.html": "/personal-portfolio/index.html",
-    "main.e0016c7a.css.map": "/personal-portfolio/static/css/main.e0016c7a.css.map",
-    "main.d2297e0a.js.map": "/personal-portfolio/static/js/main.d2297e0a.js.map"
+    "main.css": "/static/css/main.e0016c7a.css",
+    "main.js": "/static/js/main.a4bdb7c3.js",
+    "static/media/Nimo.jpg": "/static/media/Nimo.bb1798c6d16a8b695ac0.jpg",
+    "static/media/computer_vision.jpeg": "/static/media/computer_vision.a97802ac641d9c5ac41b.jpeg",
+    "static/media/RestaurantAI.jpg": "/static/media/RestaurantAI.6c4509bdf2236a83273c.jpg",
+    "static/media/lunarlander.jpeg": "/static/media/lunarlander.c8eddbb4fb8833a7240c.jpeg",
+    "index.html": "/index.html",
+    "main.e0016c7a.css.map": "/static/css/main.e0016c7a.css.map",
+    "main.a4bdb7c3.js.map": "/static/js/main.a4bdb7c3.js.map"
   },
   "entrypoints": [
     "static/css/main.e0016c7a.css",
-    "static/js/main.d2297e0a.js"
+    "static/js/main.a4bdb7c3.js"
   ]
 }
