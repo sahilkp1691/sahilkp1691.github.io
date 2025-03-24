@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { Button } from './components/ui/button';
 // Import pages
 import HomePage from './pages/homepage';
@@ -16,7 +16,7 @@ const App = () => {
   ];
 
   return (
-    <Router basename={process.env.PUBLIC_URL}>
+    <Router>
       <div className="flex flex-col min-h-screen bg-background text-foreground">
         {/* Simple Header */}
         <header className="fixed top-0 w-full bg-background/80 backdrop-blur-sm z-50 border-b">

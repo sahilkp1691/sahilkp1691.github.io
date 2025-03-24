@@ -2,7 +2,7 @@
     "name": "sahilpansare-portfolio",
     "version": "0.1.0",
     "private": true,
-    "homepage": "https://sahilkp1691.github.io/app.js",
+    "homepage": "https://sahilkp1691.github.io/",
     "dependencies": {
         "@emotion/react": "^11.14.0",
         "@emotion/styled": "^11.14.0",
