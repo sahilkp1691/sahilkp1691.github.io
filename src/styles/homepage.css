@@ -1,0 +1,71 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #000;
+  color: #fff;
+}
+
+#tsparticles {
+  position: fixed !important;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.data-card {
+  @apply p-6 rounded-lg bg-black/30 backdrop-blur-sm border border-gray-700 shadow-lg;
+}
+
+.tech-stack {
+  @apply flex flex-wrap gap-2 mt-4;
+}
+
+.tech-tag {
+  @apply px-3 py-1 rounded-full text-sm bg-primary/10 text-primary border border-primary/20;
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary/20 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary/30;
+}
+
+/* Animation classes */
+.hover-scale {
+  @apply transition-transform duration-300 hover:scale-105;
+}
+
+/* Glass effect */
+.glass-effect {
+  @apply bg-black/30 backdrop-blur-sm border border-gray-700;
+}
+
+/* Section transitions */
+.section-transition {
+  @apply transition-all duration-500;
+}
+
+/* Interactive elements */
+.interactive-element {
+  @apply transition-all duration-300 hover:shadow-lg hover:border-primary/30;
+} 

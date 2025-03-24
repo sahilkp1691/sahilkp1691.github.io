@@ -1,6 +1,7 @@
 import React from 'react';
-import { Container, Typography, Grid, Card, CardContent, CardMedia, CardActions, Button, Chip } from '@mui/material';
-import { GitHub, Launch } from '@mui/icons-material';
+import { motion } from 'framer-motion';
+import { Button } from '../components/ui/button';
+import { Github, ExternalLink, Brain, MessageSquare, Eye, Gamepad } from 'lucide-react';
 import restaurantAI from '../assets/Images/RestaurantAI.jpg';
 import computerVision from '../assets/Images/computer_vision.jpeg';
 import lunarLander from '../assets/Images/lunarlander.jpeg';
@@ -16,6 +17,7 @@ const ProjectsPage = () => {
       tags: ["Deep Learning", "JavaScript", "Three.js", "TensorFlow"],
       github: "https://github.com/sahilkp1691",
       demo: "https://demo-link.com",
+      icon: <Brain className="w-6 h-6" />
     },
     {
       id: 2,
@@ -25,6 +27,7 @@ const ProjectsPage = () => {
       tags: ["NLP", "Python", "React", "Flask"],
       github: "https://github.com/sahilkp1691/Nimo-WhatsappAgent",
       demo: "https://demo-link.com",
+      icon: <MessageSquare className="w-6 h-6" />
     },
     {
       id: 3,
@@ -34,6 +37,7 @@ const ProjectsPage = () => {
       tags: ["Computer Vision", "PyTorch", "YOLO", "Streamlit"],
       github: "https://github.com/sahilkp1691/Application-Object-Detection",
       demo: "https://demo-link.com",
+      icon: <Eye className="w-6 h-6" />
     },
     {
       id: 4,
@@ -43,75 +47,134 @@ const ProjectsPage = () => {
       tags: ["Reinforcement Learning", "Python", "TensorFlow", "OpenAI Gym"],
       github: "https://github.com/sahilkp1691/Reinforcement-Learning-LunarLander",
       demo: "https://demo-link.com",
-    },
+      icon: <Gamepad className="w-6 h-6" />
+    }
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { 
+      opacity: 1,
+      transition: { 
+        staggerChildren: 0.2 
+      }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: {
+        duration: 0.5
+      }
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-gray-900 text-white py-16">
-      <Container maxWidth="lg">
-        <Typography variant="h2" component="h1" className="mb-8 text-center font-bold">
-          My Projects
-        </Typography>
-        
-        <Typography variant="body1" className="mb-12 text-center text-gray-300 max-w-2xl mx-auto">
-          Explore my portfolio of machine learning and AI projects. Each project showcases different skills and technologies in the field of artificial intelligence.
-        </Typography>
-        
-        <Grid container spacing={4}>
-          {projects.map((project) => (
-            <Grid item key={project.id} xs={12} md={6}>
-              <Card className="h-full flex flex-col bg-gray-800 text-white hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300">
-                <CardMedia
-                  component="img"
-                  height="200"
-                  image={project.image}
-                  alt={project.title}
-                />
-                <CardContent className="flex-grow">
-                  <Typography variant="h5" component="h2" className="mb-2">
+    <div className="min-h-screen bg-white">
+      {/* Hero Section */}
+      <section className="relative py-20 px-4 bg-gradient-to-br from-blue-50 via-white to-purple-50">
+        <motion.div 
+          className="container mx-auto max-w-4xl text-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-600">
+            My Projects
+          </h1>
+          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+            Explore my portfolio of machine learning and AI projects. Each project showcases different skills and technologies in the field of artificial intelligence.
+          </p>
+        </motion.div>
+      </section>
+
+      {/* Projects Grid */}
+      <section className="py-20 px-4">
+        <motion.div 
+          className="container mx-auto max-w-6xl"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {projects.map((project) => (
+              <motion.div
+                key={project.id}
+                variants={cardVariants}
+                whileHover={{ y: -5 }}
+                className="group bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300"
+              >
+                <div className="relative h-48 overflow-hidden">
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"
+                    initial={{ opacity: 0 }}
+                    whileHover={{ opacity: 1 }}
+                  />
+                  <motion.img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                  />
+                  <motion.div 
+                    className="absolute top-4 left-4 p-2 bg-white/90 rounded-full z-20"
+                    whileHover={{ scale: 1.1 }}
+                  >
+                    <div className="text-blue-600">
+                      {project.icon}
+                    </div>
+                  </motion.div>
+                </div>
+
+                <div className="p-6">
+                  <h2 className="text-2xl font-semibold mb-3 text-gray-900 group-hover:text-blue-600 transition-colors">
                     {project.title}
-                  </Typography>
-                  <Typography variant="body2" className="text-gray-300 mb-4">
+                  </h2>
+                  <p className="text-gray-600 mb-4">
                     {project.description}
-                  </Typography>
-                  <div className="flex flex-wrap gap-2 mt-2">
+                  </p>
+                  <div className="flex flex-wrap gap-2 mb-6">
                     {project.tags.map((tag) => (
-                      <Chip 
-                        key={tag} 
-                        label={tag} 
-                        size="small" 
-                        className="bg-blue-900 text-blue-100"
-                      />
+                      <motion.span 
+                        key={tag}
+                        className="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-sm font-medium"
+                        whileHover={{ scale: 1.05 }}
+                      >
+                        {tag}
+                      </motion.span>
                     ))}
                   </div>
-                </CardContent>
-                <CardActions className="border-t border-gray-700 px-4 py-3">
-                  <Button 
-                    size="small" 
-                    startIcon={<GitHub />}
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-300 hover:text-white"
-                  >
-                    Code
-                  </Button>
-                  <Button 
-                    size="small" 
-                    startIcon={<Launch />}
-                    href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-400 hover:text-blue-300"
-                  >
-                    Live Demo
-                  </Button>
-                </CardActions>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
-      </Container>
+                  <div className="flex gap-4">
+                    <Button variant="outline" size="sm" className="gap-2" asChild>
+                      <a 
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Github className="w-4 h-4" />
+                        Code
+                      </a>
+                    </Button>
+                    <Button variant="outline" size="sm" className="gap-2" asChild>
+                      <a 
+                        href={project.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <ExternalLink className="w-4 h-4" />
+                        Live Demo
+                      </a>
+                    </Button>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </section>
     </div>
   );
 };

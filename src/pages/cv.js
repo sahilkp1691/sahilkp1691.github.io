@@ -1,38 +1,48 @@
 import React from 'react';
-import { Container, Typography, Paper, Grid, Divider, Button, List, ListItem, ListItemIcon, ListItemText, Box } from '@mui/material';
-import { WorkOutline, School, Code, DownloadOutlined, CheckCircleOutline } from '@mui/icons-material';
+import { motion } from 'framer-motion';
+import { Button } from '../components/ui/button';
+import {
+  Briefcase,
+  GraduationCap,
+  Award,
+  Code,
+  Brain,
+  Download,
+  ChevronRight,
+  Network,
+  Cpu,
+  Database,
+  GitBranch,
+  Cloud,
+  LineChart,
+  Terminal,
+  Boxes
+} from 'lucide-react';
 
 const CVPage = () => {
-  const skills = [
-    { category: "Programming", items: ["Python", "R", "SQL"] },
-    { category: "ML/AI", items: ["TensorFlow", "PyTorch", "scikit-learn", "Keras", "LangChain"] },
-    { category: "Data Visualization", items: ["Tableau", "Microsoft Power BI", "Matplotlib", "Dash", "Plotly"] },
-    { category: "Tools & Platforms", items: ["Git", "Docker", "AWS", "OpenAI (GPT4, Whisper)", "Cursor"] },
-  ];
-
-  const experiences = [
+  const experience = [
     {
       title: "Data Scientist",
       company: "BG Automotive, UK",
       period: "Mar'25 - Present",
       description: [
-        "Developing a digital clone of BGA's supply chain for enhanced forecasting and inventory management.",
+        "Developing a digital clone of BGA's supply chain for enhanced forecasting and inventory management",
         "Building time series models for accurate demand forecasting and stock level optimization",
-        "Implementing min-max inventory calculations to maintain optimal stock levels.",
-        "Leveraging data-driven insights to improve supply chain efficiency and decision-making."
+        "Implementing min-max inventory calculations to maintain optimal stock levels",
+        "Leveraging data-driven insights to improve supply chain efficiency and decision-making"
       ]
     },
     {
       title: "Data Scientist",
-      company: "Ernst & Young India LLP.",
+      company: "Ernst & Young India LLP",
       period: "Feb'22 - May'23",
       description: [
-        "Delivered time series price forecasting solutions for the State Government Agriculture Department using LSTM and ARIMA, retaining a £600,000 client project and increasing forecasting accuracy (based on MAPE) from 72% to 96%.",
-        "Deployed Computer Vision models for MENA's largest power supplier, employing advanced machine learning techniques for Object Detection and Anomaly Detection, resulting in enhanced operational efficiency and cost savings.",
-        "Developed an NLP chatbot for utility sector customer support using LLaMA, Flask, and Docker, reducing customer query resolution time by 40%.",
-        "Built an RAG system using LLaMA, Langchain, and Chroma DB for public health research retrieval, reducing research time during crisis situations.",
-        "Designed a real-time defect detection system in manufacturing using YOLOv5, increasing QA efficiency and reducing defects.",
-        "Created interactive Dash/Plotly dashboards for real-time log data insights at the National Data Centre for India, improving incident resolution times. Integrated an ML model for anomaly detection, enabling the automatic flagging of potential cyber threats, enhancing security monitoring efficiency."
+        "Delivered time series price forecasting solutions achieving 96% accuracy (up from 72%) for State Government Agriculture Department",
+        "Deployed Computer Vision models for MENA's largest power supplier, enhancing operational efficiency",
+        "Developed an NLP chatbot reducing customer query resolution time by 40%",
+        "Built an RAG system using LLaMA and Langchain for public health research retrieval",
+        "Designed a real-time defect detection system using YOLOv5 for manufacturing QA",
+        "Created interactive dashboards with ML-powered anomaly detection for cyber security monitoring"
       ]
     },
     {
@@ -40,9 +50,9 @@ const CVPage = () => {
       company: "Enerdatics- Energy Analytics Startup",
       period: "Apr'21 - Dec'21",
       description: [
-        "Built renewable energy consumption models, improving predictive accuracy by 20%, optimizing resource allocation for clients.",
-        "Designed an NLP pipeline to classify and extract key entities from industry reports, reducing data transformation time by 2x.",
-        "Conducted web scraping to compile M&A data in the renewable energy sector, producing insights that directly supported £4M worth of investments."
+        "Built renewable energy consumption models improving predictive accuracy by 20%",
+        "Designed an NLP pipeline reducing data transformation time by 2x",
+        "Conducted web scraping for M&A data supporting £4M worth of investments"
       ]
     }
   ];
@@ -52,126 +62,182 @@ const CVPage = () => {
       degree: "Master of Science in Data Science",
       institution: "University of Bath, UK",
       period: "2023 - 2024",
-      focus: "(Thesis) RadarGrasp - Developed an end-to-end radar-based framework using FMCW radar for human grasp classification and prediction with models like Temporal CNN and CNN-LSTM."
+      details: "Thesis: RadarGrasp - Developed an end-to-end radar-based framework using FMCW radar for human grasp classification and prediction with Temporal CNN and CNN-LSTM models"
     },
     {
       degree: "Bachelor of Science in Data Science",
-      institution: "Symbiois Skills and Professional University, Pune",
+      institution: "Symbiosis Skills and Professional University, Pune",
       period: "2019 - 2022",
-      focus: "Winner of Smart India Hackathon 2020 – Software Edition (World’s Largest Hackathon)"
+      details: "Winner of Smart India Hackathon 2020 – Software Edition (World's Largest Hackathon)"
     }
   ];
 
+  const skills = [
+    {
+      category: "Programming",
+      icon: <Terminal className="w-6 h-6 text-blue-600" />,
+      items: ["Python", "R", "SQL"]
+    },
+    {
+      category: "ML/AI",
+      icon: <Brain className="w-6 h-6 text-blue-600" />,
+      items: ["TensorFlow", "PyTorch", "scikit-learn", "Keras", "LangChain"]
+    },
+    {
+      category: "Data Visualization",
+      icon: <LineChart className="w-6 h-6 text-blue-600" />,
+      items: ["Tableau", "Microsoft Power BI", "Matplotlib", "Dash", "Plotly"]
+    },
+    {
+      category: "Tools & Platforms",
+      icon: <Boxes className="w-6 h-6 text-blue-600" />,
+      items: ["Git", "Docker", "AWS", "OpenAI (GPT4, Whisper)", "Cursor"]
+    }
+  ];
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { staggerChildren: 0.2 } }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: { opacity: 1, x: 0 }
+  };
+
   return (
-    <div className="min-h-screen bg-gray-900 text-white py-16">
-      <Container maxWidth="lg">
-        <Box className="flex justify-between items-center mb-8">
-          <Typography variant="h2" component="h1" className="font-bold">
-            Resume / CV
-          </Typography>
-          
-          <Button 
-            variant="contained" 
-            startIcon={<DownloadOutlined />}
-            className="bg-blue-600 hover:bg-blue-700"
-          >
-            Download PDF
+    <div className="min-h-screen bg-white">
+      {/* Header Section */}
+      <section className="relative py-20 px-4 bg-gradient-to-br from-blue-50 via-white to-purple-50">
+        <motion.div 
+          className="container mx-auto max-w-4xl text-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-600">
+            Curriculum Vitae
+          </h1>
+          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+            Data Scientist & ML Engineer with expertise in developing innovative AI solutions
+          </p>
+          <Button size="lg" className="gap-2">
+            <Download className="w-4 h-4" />
+            Download CV
           </Button>
-        </Box>
-        
-        <Paper elevation={3} className="bg-gray-800 p-8 mb-8">
-          <Typography variant="h4" component="h2" className="mb-4 font-bold text-blue-300">
-            Professional Experience
-          </Typography>
+        </motion.div>
+      </section>
+
+      <div className="container mx-auto max-w-4xl px-4 py-12">
+        {/* Experience Section */}
+        <motion.section 
+          className="mb-16"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          <div className="flex items-center gap-3 mb-8">
+            <Briefcase className="w-6 h-6 text-blue-600" />
+            <h2 className="text-2xl font-bold text-gray-900">Experience</h2>
+          </div>
           
-          {experiences.map((exp, index) => (
-            <div key={index} className={index !== experiences.length - 1 ? "mb-8" : ""}>
-              <Grid container spacing={2}>
-                <Grid item xs={12} sm={3}>
-                  <Typography variant="subtitle1" className="text-gray-300 font-medium">
-                    {exp.period}
-                  </Typography>
-                </Grid>
-                <Grid item xs={12} sm={9}>
-                  <Typography variant="h6" className="font-bold">
-                    {exp.title}
-                  </Typography>
-                  <Typography variant="subtitle1" className="text-blue-400 mb-2">
-                    {exp.company}
-                  </Typography>
-                  <List dense>
-                    {exp.description.map((item, i) => (
-                      <ListItem key={i} className="px-0 py-1">
-                        <ListItemIcon className="min-w-8">
-                          <CheckCircleOutline fontSize="small" className="text-blue-500" />
-                        </ListItemIcon>
-                        <ListItemText primary={item} />
-                      </ListItem>
+          <div className="space-y-8">
+            {experience.map((job, index) => (
+              <motion.div 
+                key={index}
+                variants={itemVariants}
+                className="relative pl-8 border-l-2 border-blue-100 hover:border-blue-500 transition-colors duration-300"
+              >
+                <motion.div 
+                  className="absolute -left-2 top-0 w-4 h-4 rounded-full bg-blue-100 border-2 border-blue-500"
+                  whileHover={{ scale: 1.2 }}
+                />
+                <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
+                  <h3 className="text-xl font-semibold text-gray-900">{job.title}</h3>
+                  <p className="text-blue-600 font-medium">{job.company}</p>
+                  <p className="text-gray-500 text-sm mb-4">{job.period}</p>
+                  <ul className="space-y-2">
+                    {job.description.map((item, i) => (
+                      <li key={i} className="flex items-start gap-2 text-gray-600">
+                        <ChevronRight className="w-4 h-4 mt-1 text-blue-500" />
+                        {item}
+                      </li>
                     ))}
-                  </List>
-                </Grid>
-              </Grid>
-              {index !== experiences.length - 1 && <Divider className="my-6 border-gray-700" />}
-            </div>
-          ))}
-        </Paper>
-        
-        <Paper elevation={3} className="bg-gray-800 p-8 mb-8">
-          <Typography variant="h4" component="h2" className="mb-4 font-bold text-blue-300">
-            Education
-          </Typography>
-          
-          {education.map((edu, index) => (
-            <div key={index} className={index !== education.length - 1 ? "mb-6" : ""}>
-              <Grid container spacing={2}>
-                <Grid item xs={12} sm={3}>
-                  <Typography variant="subtitle1" className="text-gray-300 font-medium">
-                    {edu.period}
-                  </Typography>
-                </Grid>
-                <Grid item xs={12} sm={9}>
-                  <Typography variant="h6" className="font-bold">
-                    {edu.degree}
-                  </Typography>
-                  <Typography variant="subtitle1" className="text-blue-400 mb-1">
-                    {edu.institution}
-                  </Typography>
-                  <Typography variant="body2" className="text-gray-300">
-                    {edu.focus}
-                  </Typography>
-                </Grid>
-              </Grid>
-              {index !== education.length - 1 && <Divider className="my-6 border-gray-700" />}
-            </div>
-          ))}
-        </Paper>
-        
-        <Paper elevation={3} className="bg-gray-800 p-8">
-          <Typography variant="h4" component="h2" className="mb-6 font-bold text-blue-300">
-            Skills
-          </Typography>
-          
-          <Grid container spacing={4}>
-            {skills.map((skillGroup, index) => (
-              <Grid item key={index} xs={12} sm={6} md={3}>
-                <Typography variant="h6" className="mb-3 font-bold">
-                  {skillGroup.category}
-                </Typography>
-                <List dense>
-                  {skillGroup.items.map((skill, i) => (
-                    <ListItem key={i} className="px-0 py-1">
-                      <ListItemIcon className="min-w-8">
-                        <Code fontSize="small" className="text-blue-500" />
-                      </ListItemIcon>
-                      <ListItemText primary={skill} />
-                    </ListItem>
-                  ))}
-                </List>
-              </Grid>
+                  </ul>
+                </div>
+              </motion.div>
             ))}
-          </Grid>
-        </Paper>
-      </Container>
+          </div>
+        </motion.section>
+
+        {/* Education Section */}
+        <motion.section 
+          className="mb-16"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          <div className="flex items-center gap-3 mb-8">
+            <GraduationCap className="w-6 h-6 text-blue-600" />
+            <h2 className="text-2xl font-bold text-gray-900">Education</h2>
+          </div>
+
+          <div className="space-y-6">
+            {education.map((edu, index) => (
+              <motion.div 
+                key={index}
+                variants={itemVariants}
+                className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300"
+              >
+                <h3 className="text-xl font-semibold text-gray-900">{edu.degree}</h3>
+                <p className="text-blue-600 font-medium">{edu.institution}</p>
+                <p className="text-gray-500 text-sm mb-2">{edu.period}</p>
+                <p className="text-gray-600">{edu.details}</p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.section>
+
+        {/* Skills Section */}
+        <motion.section
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          <div className="flex items-center gap-3 mb-8">
+            <Code className="w-6 h-6 text-blue-600" />
+            <h2 className="text-2xl font-bold text-gray-900">Skills</h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            {skills.map((skillGroup, index) => (
+              <motion.div 
+                key={index}
+                variants={itemVariants}
+                className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300"
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  {skillGroup.icon}
+                  <h3 className="text-lg font-semibold text-gray-900">{skillGroup.category}</h3>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {skillGroup.items.map((skill, i) => (
+                    <span 
+                      key={i}
+                      className="px-3 py-1.5 bg-gradient-to-r from-blue-50 to-blue-100 text-blue-600 rounded-full text-sm font-medium hover:from-blue-100 hover:to-blue-200 transition-all duration-300"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.section>
+      </div>
     </div>
   );
 };
